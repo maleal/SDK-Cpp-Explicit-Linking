@@ -24,7 +24,7 @@ Modulo de conexión con el gateway de pago 'Todo Pago'
 </li>
 <li>b. Deberá definir la macro "DLL_EXPLICIT_LINK" para todas las configuraciones de su proyecto. Si usa Visual C++ 2012            deberá     ir a: Property Pages -> C/C++ -> Preprocessor y seleccionar "All Configurations" para luego en          "Preprocessor Definitios"     crear la macro.
 </li>
-<li>c. Archivo 'cacerts.pem' Contiene los certificados públicos otorgados por una autoridad de ceertificación de confianza.         puede descargarlo desde  [aquí](http://curl.haxx.se/docs/caextract.html).
+<li>c. Archivo 'cacerts.pem' Contiene los certificados públicos otorgados por una autoridad de certificación de confianza.         puede descargarlo desde  [aquí]: (http://curl.haxx.se/docs/caextract.html/).
 </li>
 </ul>
 
