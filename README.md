@@ -38,4 +38,7 @@ Esta versión soporta únicamente pago en moneda nacional argentina (CURRENCYCOD
 
 <a name="uso"></a>		
 ## Uso		
-####1.Inicializar la clase correspondiente al conector (TodoPago).
+####1.Cargar la Dll y obtener el puntero a una instancia de la interfaz (TodoPago).
+	Para esto deberá usar la función API LoadLibrary() y a GetProcAddress() ej:
+	<br />##	PF_GetDLLInterface pIntf = (PF_GetDLLInterface) GetProcAddress(hDll, "GetDLLInterface");
+	
