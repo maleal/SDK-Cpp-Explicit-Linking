@@ -24,11 +24,18 @@ Modulo de conexión con el gateway de pago 'Todo Pago'
 </li>
 <li>b. Deberá definir la macro "DLL_EXPLICIT_LINK" para todas las configuraciones de su proyecto. Si usa Visual C++ 2012            deberá     ir a: Property Pages -> C/C++ -> Preprocessor y seleccionar "All Configurations" para luego en          "Preprocessor Definitios"     crear la macro.
 </li>
-<li>c. Archivo 'cacerts.pem' Contiene los certificados públicos otorgados por una autoridad de certificación de confianza.         puede descargarlo desde  [aquí]: (http://curl.haxx.se/docs/caextract.html/).
+<li>c. Archivo 'cacerts.pem' Contiene los certificados públicos otorgados por una autoridad de certificación de confianza.         puede descargarlo desde [aquí](http://curl.haxx.se/docs/caextract.html/).
 </li>
 </ul>
 
 <br />		
 [<sub>Volver a inicio</sub>](#inicio)
 
+<a name="general"></a>
+## Generalidades
+Esta versión soporta únicamente pago en moneda nacional argentina (CURRENCYCODE = 32).
+[<sub>Volver a inicio</sub>](#inicio)
 
+<a name="uso"></a>		
+## Uso		
+####1.Inicializar la clase correspondiente al conector (TodoPago).
