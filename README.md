@@ -61,7 +61,7 @@ Esta versión soporta únicamente pago en moneda nacional argentina (CURRENCYCOD
 	Antes de consumir el servicio web 'AuthorizeRequest' debemos invocar al método
 	'SendAuthorizeRequest_SetParams()' este metodo usa dos parámetros del tipo std::map, para cada uno de estos parámetros estan definidas las keys y se usan de la siguiente forma:
 	<ul>
-		<li> 'RParams' es el primer parametro del metodo <li/>
+		<li> 'RParams' es el primer parametro del metodo </li>
 		     ejemplo:
 		     map<std::string, std::string>RParams;
 		     RParams[SECURITY]	= "912EC803B2CE49E4A541068D495AB570";
@@ -71,7 +71,7 @@ Esta versión soporta únicamente pago en moneda nacional argentina (CURRENCYCOD
 	             RParams[URL_ERROR]	= "http://www.coco.com";
 	             RParams[ENCODING_METHOD] = "XML";
 	        
-	        <li> 'RPayload' es el segundo parametro de este metodo y también del tipo std:map<string, string> <li/>
+	        <li> 'RPayload' es el segundo parametro de este metodo y también del tipo std:map<string, string> </li>
 	             ejemplo:
 	                map<string, string>PayLParams;
 	                PayLParams[EMAILCLIENTE]	= "client_email@dominio.com";
@@ -140,7 +140,7 @@ Esta versión soporta únicamente pago en moneda nacional argentina (CURRENCYCOD
 			PayLParams[CSITTOTALAMOUNT] 		= "1254.40";//CONDICIONAL.      
 			PayLParams[CSITQUANTITY]		= "1";//CONDICIONAL.       
 			PayLParams[CSITUNITPRICE]		= "1254.40";
-	<ul/>
+	</ul>
 	
 	
 
