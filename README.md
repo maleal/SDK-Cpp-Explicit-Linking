@@ -147,6 +147,8 @@ Esta versión soporta únicamente pago en moneda nacional argentina (CURRENCYCOD
 			PayLParams[CSITQUANTITY]		= "1";//CONDICIONAL.       
 			PayLParams[CSITUNITPRICE]		= "1254.40";
 ```
+	<ins><strong>Invocamos al servicio web</strong></ins>
+	
 
 	
 	
