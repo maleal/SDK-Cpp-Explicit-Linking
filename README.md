@@ -61,29 +61,32 @@ Esta versión soporta únicamente pago en moneda nacional argentina (CURRENCYCOD
 	"SendAuthorizeRequest_SetParams(request, payload)"
 	este metodo usa dos parámetros del tipo std::map, para cada uno de estos parámetros estan definidas las keys y se 		usan de la siguiente forma:
 	
-		Si "RParams" es el primer parámetro del metodo, hacemos:
+		Si 'RParams' es el primer parámetro del metodo, hacemos:
 ```C++
-		     std::map<std::string, std::string>RParams;
-		     //<ins><strong>datos propios del comercio</strong></ins>
-		     RParams[SECURITY]	= "912EC803B2CE49E4A541068D495AB570";
-		     RParams[SESSION]	= "ABCDEF-1234-12221-FDE1-00000200";
-	             RParams[MERCHANT]	= "2153";
-	             RParams[URL_OK]	= "http://google.com";
-	             RParams[URL_ERROR]	= "http://www.coco.com";
-	             RParams[ENCODING_METHOD] = "XML";
+			std::map<std::string, std::string>RParams;
+			
+			//datos propios del comercio
+			RParams[SECURITY]	= "912EC803B2CE49E4A541068D495AB570";
+			RParams[SESSION]	= "ABCDEF-1234-12221-FDE1-00000200";
+			RParams[MERCHANT]	= "2153";
+			RParams[URL_OK]	= "http://google.com";
+			RParams[URL_ERROR]	= "http://www.coco.com";
+			RParams[ENCODING_METHOD] = "XML";
 ```
 	        
 	        Si 'RPayload' es el segundo parametro de este metodo y también del tipo std:map<string, string> hacemos:
-	             ```C#
+```C++
 	             	<ins><strong>datos propios del comercio</strong></ins>
 	                map<string, string>PayLParams;
+	                
+	                //datos propios del comercio
 	                PayLParams[EMAILCLIENTE]	= "client_email@dominio.com";
 			PayLParams[AMOUNT]		= "55";
 			PayLParams[CURRENCYCODE]	= "032";
 			PayLParams[OPERATIONID]		= "01";
 			PayLParams[PAYL_MERCHANT]	= "2153";
 		
-			<ins><strong>datos adicionales</strong></ins>
+			//datos adicionales
 			PayLParams[CSBTCITY]		= "Villa General Belgrano"; //MANDATORIO.
 			PayLParams[CSSTCITY	]	= "Villa General Belgrano"; //MANDATORIO.
 		           
@@ -144,8 +147,8 @@ Esta versión soporta únicamente pago en moneda nacional argentina (CURRENCYCOD
 			PayLParams[CSITTOTALAMOUNT] 		= "1254.40";//CONDICIONAL.      
 			PayLParams[CSITQUANTITY]		= "1";//CONDICIONAL.       
 			PayLParams[CSITUNITPRICE]		= "1254.40";
-			```
-	</ul>
+```
+
 	
 	
 
