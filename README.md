@@ -28,7 +28,6 @@ Modulo de conexión con el gateway de pago 'Todo Pago'
 </li>
 </ul>
 
-<br />		
 [<sub>Volver a inicio</sub>](#inicio)
 
 <a name="general"></a>
@@ -40,7 +39,7 @@ Esta versión soporta únicamente pago en moneda nacional argentina (CURRENCYCOD
 ## Uso		
 ####1.Cargar la Dll y obtener el puntero a una instancia de la interfaz (TodoPago).
 	Para esto deberá usar la función API LoadLibrary() y a GetProcAddress() ej:
-	<br />
+	
 	##	HMODULE hDll = LoadLibrary( "ExLinkTPConnectorDll.dll" );
 	##	if (hDll)
 	##		PF_GetDLLInterface pIntf = (PF_GetDLLInterface) GetProcAddress(hDll, "GetDLLInterface");
@@ -51,7 +50,7 @@ Esta versión soporta únicamente pago en moneda nacional argentina (CURRENCYCOD
 	 -crear un string con el Endpoint suministrados por Todo Pago
 	 -crear un string Athorization con el dato del http header suministrados por Todo Pago
 	 -llame al metodo 'TPConnector_Init'
-	 <br />
+
 	##	TPCtor_Interface *pConntor = pIntf();
 	## 	if( pConntor ) {
 			cout << "----------------Calling SendAuthorizeRequest() ........." << endl;
