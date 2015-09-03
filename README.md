@@ -149,6 +149,12 @@ Esta versión soporta únicamente pago en moneda nacional argentina (CURRENCYCOD
 			PayLParams[CSITUNITPRICE]		= "1254.40";
 ```
 <ins><strong>Invocamos al servicio web</strong></ins>
+		En este caso hay que llamar a SendAuthorizeRequest_Send( Output ). Este metodo devolverá en su parámetro  'Output' un std::map<string, string> con las siguientes Keys, necesarias para ubicar los datos de la respuesta del servicio web.
+		Out[STATUSCODE]
+		Out[Message]
+		Out[REQUEST_KEY]
+		Out[URL_Request]
+		
 	
 
 	
