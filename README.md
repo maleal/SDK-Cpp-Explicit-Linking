@@ -40,9 +40,9 @@ Esta versión soporta únicamente pago en moneda nacional argentina (CURRENCYCOD
 ####1.Cargar la Dll y obtener el puntero a una instancia de la interfaz (TodoPago).
 	Para esto deberá usar la función API LoadLibrary() y a GetProcAddress() ej:
 	
-	##	HMODULE hDll = LoadLibrary( "ExLinkTPConnectorDll.dll" );
-	##	if (hDll)
-	##		PF_GetDLLInterface pIntf = (PF_GetDLLInterface) GetProcAddress(hDll, "GetDLLInterface");
+		HMODULE hDll = LoadLibrary( "ExLinkTPConnectorDll.dll" );
+		if (hDll)
+			PF_GetDLLInterface pIntf = (PF_GetDLLInterface) GetProcAddress(hDll, "GetDLLInterface");
 ####2.Inicializar el conector (TodoPago).
 	Al puntero a funcion obtenido, asignelo a uno del tipo de la clase "TPCtor_Interface" con el cual accederá a todas
 	las operaciones de la interfaz pero primero deberá inicializar el conector con el metodo 'TPConnector_Init' de la
