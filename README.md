@@ -57,4 +57,90 @@ Esta versión soporta únicamente pago en moneda nacional argentina (CURRENCYCOD
 			cout << "----------------Calling SendAuthorizeRequest() ........." << endl;
 			if(ret = pConntor->TPConnector_Init(Endpoint, Athorization) == 0)
 				cout << "---------------- SendAuthorizeRequest() OK\n";
+####3.Servicio Web 'Authorize Request' (TodoPago).
+	Antes de consumir el servicio web 'AuthorizeRequest' debemos invocar al método
+	'SendAuthorizeRequest_SetParams()' este metodo usa dos parámetros del tipo std::map, para cada uno de estos parámetros estan definidas las keys y se usan de la siguiente forma:
+	<ul>
+		<li> 'RParams' es el primer parametro del metodo <li/>
+		     ejemplo:
+		     map<std::string, std::string>RParams;
+		     RParams[SECURITY]	= "912EC803B2CE49E4A541068D495AB570";
+		     RParams[SESSION]	= "ABCDEF-1234-12221-FDE1-00000200";
+	             RParams[MERCHANT]	= "2153";
+	             RParams[URL_OK]	= "http://google.com";
+	             RParams[URL_ERROR]	= "http://www.coco.com";
+	             RParams[ENCODING_METHOD] = "XML";
+	        
+	        <li> 'RPayload' es el segundo parametro de este metodo y también del tipo std:map<string, string> <li/>
+	             ejemplo:
+	                map<string, string>PayLParams;
+	                PayLParams[EMAILCLIENTE]	= "client_email@dominio.com";
+			PayLParams[AMOUNT]		= "55";
+			PayLParams[CURRENCYCODE]	= "032";
+			PayLParams[OPERATIONID]		= "01";
+			PayLParams[PAYL_MERCHANT]	= "2153";
+		
+			PayLParams[CSBTCITY]		= "Villa General Belgrano"; //MANDATORIO.
+			PayLParams[CSSTCITY	]	= "Villa General Belgrano"; //MANDATORIO.
+		           
+			PayLParams[CSBTCOUNTRY]		= "AR";//MANDATORIO. Código ISO.
+			PayLParams[CSSTCOUNTRY]		= "AR";//MANDATORIO. Código ISO.
+		             
+			PayLParams[CSBTEMAIL]		= "todopago@hotmail.com"; //MANDATORIO.
+			PayLParams[CSSTEMAIL]		= "todopago@hotmail.com"; //MANDATORIO.
+		             
+			PayLParams[CSBTFIRSTNAME]	= "Juan";//MANDATORIO.      
+			PayLParams[CSSTFIRSTNAME]	= "Juan";//MANDATORIO.      
+		             
+			PayLParams[CSBTLASTNAME]	= "Perez";//MANDATORIO.
+			PayLParams[CSSTLASTNAME]	= "Perez";//MANDATORIO.
+		             
+			PayLParams[CSBTPHONENUMBER]	= "541160913988";//MANDATORIO.     
+			PayLParams[CSSTPHONENUMBER]	= "541160913988";//MANDATORIO.     
+		             
+			PayLParams[CSBTPOSTALCODE]	= " 1010";//MANDATORIO.
+			PayLParams[CSSTPOSTALCODE]	= " 1010";//MANDATORIO.
+		             
+			PayLParams[CSBTSTATE]		= "B";//MANDATORIO
+			PayLParams[CSSTSTATE]		= "B";//MANDATORIO
+		             
+			PayLParams[CSBTSTREET1]		= "Cerrito 740";//MANDATORIO.
+			PayLParams[CSSTSTREET1]		= "Cerrito 740";//MANDATORIO.
+		             
+			PayLParams[CSBTCUSTOMERID]	= "453458";; //MANDATORIO.
+			PayLParams[CSBTIPADDRESS]	= "192.0.0.4"; //MANDATORIO.       
+			PayLParams[CSPTCURRENCY]	= "ARS";//MANDATORIO.      
+			PayLParams[CSPTGRANDTOTALAMOUNT]= "125.38";//MANDATORIO.
+			PayLParams[CSMDD7		]	="";//NO MANDATORIO.        
+			PayLParams[CSMDD8		]	="Y"; //NO MANDATORIO.       
+			PayLParams[CSMDD9		]	="";//NO MANDATORIO.       
+			PayLParams[CSMDD10		]	="";//NO MANDATORIO.      
+			PayLParams[CSMDD11		]	="";//NO MANDATORIO.
+			PayLParams[STCITY		]	="rosario";//MANDATORIO.       
+		
+			PayLParams[STCOUNTRY	]		="";//MANDATORIO.      
+			PayLParams[STEMAIL		]	="jose@gmail.com";//MANDATORIO.        
+			PayLParams[STFIRSTNAME	]		="Jose";//MANDATORIO.        
+			PayLParams[STLASTNAME	]		="Perez";//MANDATORIO.      
+			PayLParams[STPHONENUMBER]		= "541155893737";//MANDATORIO.        
+			PayLParams[STPOSTALCODE	]		= "1414";//MANDATORIO.        
+			PayLParams[STSTATE		]	="D";//MANDATORIO     
+		
+			PayLParams[STSTREET1	]		="San Martín 123";//MANDATORIO.       
+			PayLParams[CSMDD12		]	= "";//NO MADATORIO.     
+			PayLParams[CSMDD13		]	= "";//NO MANDATORIO.     
+			PayLParams[CSMDD14		]	= "";//NO MANDATORIO.      
+			PayLParams[CSMDD15		]	= "";//NO MANDATORIO.        
+			PayLParams[CSMDD16		]	= "";//NO MANDATORIO.
+		
+			PayLParams[CSITPRODUCTCODE] 		= "electronic_good";//CONDICIONAL
+			PayLParams[CSITPRODUCTDESCRIPTION]	= "NOTEBOOK L845 SP4304LA DF TOSHIBA";//CONDICIONAL.     
+			PayLParams[CSITPRODUCTNAME] 		= "NOTEBOOK L845 SP4304LA DF TOSHIBA";//CONDICIONAL.  
+			PayLParams[CSITPRODUCTSKU]		= "LEVJNSL36GN";//CONDICIONAL.      
+			PayLParams[CSITTOTALAMOUNT] 		= "1254.40";//CONDICIONAL.      
+			PayLParams[CSITQUANTITY]		= "1";//CONDICIONAL.       
+			PayLParams[CSITUNITPRICE]		= "1254.40";
+	<ul/>
+	
+	
 
