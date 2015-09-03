@@ -59,10 +59,13 @@ Esta versión soporta únicamente pago en moneda nacional argentina (CURRENCYCOD
 				cout << "---------------- SendAuthorizeRequest() OK\n";
 ####3.Servicio Web 'Authorize Request' (TodoPago).
 	Antes de consumir el servicio web 'AuthorizeRequest' debemos invocar al método
-	'SendAuthorizeRequest_SetParams()' este metodo usa dos parámetros del tipo std::map, para cada uno de estos parámetros estan definidas las keys y se usan de la siguiente forma:
-	<ul>
-		<li> 'RParams' es el primer parametro del metodo </li>
-		     ejemplo:
+	'SendAuthorizeRequest_SetParams(request, payload)'
+	este metodo usa dos parámetros del tipo std::map, para cada uno de estos parámetros estan definidas las keys y se 		usan de la siguiente forma:
+	
+		Si 'RParams' es el primer parámetro del metodo, hacemos:
+		     
+		     ```C#
+		     <ins><strong>datos propios del comercio</strong></ins>
 		     map<std::string, std::string>RParams;
 		     RParams[SECURITY]	= "912EC803B2CE49E4A541068D495AB570";
 		     RParams[SESSION]	= "ABCDEF-1234-12221-FDE1-00000200";
@@ -70,9 +73,11 @@ Esta versión soporta únicamente pago en moneda nacional argentina (CURRENCYCOD
 	             RParams[URL_OK]	= "http://google.com";
 	             RParams[URL_ERROR]	= "http://www.coco.com";
 	             RParams[ENCODING_METHOD] = "XML";
+	             ```
 	        
-	        <li> 'RPayload' es el segundo parametro de este metodo y también del tipo std:map<string, string> </li>
-	             ejemplo:
+	        Si 'RPayload' es el segundo parametro de este metodo y también del tipo std:map<string, string> hacemos:
+	             ```C#
+	             	<ins><strong>datos propios del comercio</strong></ins>
 	                map<string, string>PayLParams;
 	                PayLParams[EMAILCLIENTE]	= "client_email@dominio.com";
 			PayLParams[AMOUNT]		= "55";
@@ -80,6 +85,7 @@ Esta versión soporta únicamente pago en moneda nacional argentina (CURRENCYCOD
 			PayLParams[OPERATIONID]		= "01";
 			PayLParams[PAYL_MERCHANT]	= "2153";
 		
+			<ins><strong>datos adicionales</strong></ins>
 			PayLParams[CSBTCITY]		= "Villa General Belgrano"; //MANDATORIO.
 			PayLParams[CSSTCITY	]	= "Villa General Belgrano"; //MANDATORIO.
 		           
@@ -140,6 +146,7 @@ Esta versión soporta únicamente pago en moneda nacional argentina (CURRENCYCOD
 			PayLParams[CSITTOTALAMOUNT] 		= "1254.40";//CONDICIONAL.      
 			PayLParams[CSITQUANTITY]		= "1";//CONDICIONAL.       
 			PayLParams[CSITUNITPRICE]		= "1254.40";
+			```
 	</ul>
 	
 	
