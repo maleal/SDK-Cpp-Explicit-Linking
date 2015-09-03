@@ -44,7 +44,7 @@ Esta versión soporta únicamente pago en moneda nacional argentina (CURRENCYCOD
 	##	if (hDll)
 	##		PF_GetDLLInterface pIntf = (PF_GetDLLInterface) GetProcAddress(hDll, "GetDLLInterface");
 ####2.Inicializar el conector (TodoPago).
-	Al puntero a funcion obtenido, asignelo a uno del tipo de la clase 'TPCtor_Interface' con el cual accederá a todas
+	Al puntero a funcion obtenido, asignelo a uno del tipo de la clase "TPCtor_Interface" con el cual accederá a todas
 	las operaciones de la interfaz pero primero deberá inicializar el conector con el metodo 'TPConnector_Init' de la
 	siguiente forma:
 	 -crear un string con el Endpoint suministrados por Todo Pago
@@ -57,11 +57,11 @@ Esta versión soporta únicamente pago en moneda nacional argentina (CURRENCYCOD
 			if(ret = pConntor->TPConnector_Init(Endpoint, Athorization) == 0)
 				cout << "---------------- SendAuthorizeRequest() OK\n";
 ####3.Servicio Web 'Authorize Request' (TodoPago).
-	Antes de consumir el servicio web 'AuthorizeRequest' debemos invocar al método
-	'SendAuthorizeRequest_SetParams(request, payload)'
+	Antes de consumir el servicio web "AuthorizeRequest" debemos invocar al método
+	"SendAuthorizeRequest_SetParams(request, payload)"
 	este metodo usa dos parámetros del tipo std::map, para cada uno de estos parámetros estan definidas las keys y se 		usan de la siguiente forma:
 	
-		Si 'RParams' es el primer parámetro del metodo, hacemos:
+		Si "RParams" es el primer parámetro del metodo, hacemos:
 		     
 		     ```C#
 		     <ins><strong>datos propios del comercio</strong></ins>
