@@ -186,6 +186,61 @@ En este caso hay que llamar a GetAuthorizeAnswer_Send(input, output), que lleva 
 
 <a name="generales"></a>		
 ##### Parámetros Adicionales en el post inicial comunes a todos los rubros:
+```C++
+	//Example
+	map<string, string>PayLParams;
+	
+	PayLParams[CSBTCITY]		= "Villa General Belgrano"; //MANDATORIO.
+	PayLParams[CSBTCOUNTRY]		= "AR";//MANDATORIO. Código ISO.
+	PayLParams[CSBTEMAIL]		= "todopago@hotmail.com"; //MANDATORIO.
+	PayLParams[CSBTFIRSTNAME]	= "Juan";//MANDATORIO.      
+	PayLParams[CSBTLASTNAME]	= "Perez";//MANDATORIO.
+	PayLParams[CSBTPHONENUMBER]	= "541160913988";//MANDATORIO.     
+	PayLParams[CSBTPOSTALCODE]	= " 1010";//MANDATORIO.
+	PayLParams[CSBTSTATE]		= "B";//MANDATORIO
+	PayLParams[CSBTSTREET1]		= "Cerrito 740";//MANDATORIO.
+	PayLParams[CSBTCUSTOMERID]	= "453458";; //MANDATORIO.
+	PayLParams[CSBTIPADDRESS]	= "192.0.0.4"; //MANDATORIO.       
+	PayLParams[CSPTCURRENCY]	= "ARS";//MANDATORIO.      
+	PayLParams[CSPTGRANDTOTALAMOUNT]= "125.38";//MANDATORIO.
+	
+	PayLParams[CSMDD7		]	="";//NO MANDATORIO.        
+	PayLParams[CSMDD8		]	="Y"; //NO MANDATORIO.       
+	PayLParams[CSMDD9		]	="";//NO MANDATORIO.       
+	PayLParams[CSMDD10		]	="";//NO MANDATORIO.      
+	PayLParams[CSMDD11		]	="";//NO MANDATORIO.
+```
+<a name="retail"></a>		
+##### Parámetros Adicionales en el post inicial para el rubro RETAIL		
+```C#	
+	//Example
+	map<string, string>PayLParams;
+	
+	PayLParams[CSSTCITY	]	= "Villa General Belgrano"; //MANDATORIO.
+        PayLParams[CSSTCOUNTRY]		= "AR";//MANDATORIO. Código ISO.
+        PayLParams[CSSTEMAIL]		= "todopago@hotmail.com"; //MANDATORIO.
+        PayLParams[CSSTFIRSTNAME]	= "Juan";//MANDATORIO.      
+        PayLParams[CSSTLASTNAME]	= "Perez";//MANDATORIO.
+        PayLParams[CSSTPHONENUMBER]	= "541160913988";//MANDATORIO.     
+        PayLParams[CSSTPOSTALCODE]	= " 1010";//MANDATORIO.
+        PayLParams[CSSTSTATE]		= "B";//MANDATORIO
+        PayLParams[CSSTSTREET1]		= "Cerrito 740";//MANDATORIO.
+        PayLParams[CSMDD12	]	= "";//NO MADATORIO.     
+	PayLParams[CSMDD13	]	= "";//NO MANDATORIO.     
+	PayLParams[CSMDD14	]	= "";//NO MANDATORIO.      
+	PayLParams[CSMDD15	]	= "";//NO MANDATORIO.        
+	PayLParams[CSMDD16	]	= "";//NO MANDATORIO.
+	PayLParams[CSITPRODUCTCODE] 	= "electronic_good";//CONDICIONAL
+	PayLParams[CSITPRODUCTDESCRIPTION]= "NOTEBOOK L845 SP4304LA DF TOSHIBA";//CONDICIONAL.  
+	PayLParams[CSITPRODUCTNAME] 	= "NOTEBOOK L845 SP4304LA DF TOSHIBA";//CONDICIONAL.  
+	PayLParams[CSITPRODUCTSKU]	= "LEVJNSL36GN";//CONDICIONAL.      
+	PayLParams[CSITTOTALAMOUNT] 	= "1254.40";//CONDICIONAL.      
+	PayLParams[CSITQUANTITY]	= "1";//CONDICIONAL.       
+	PayLParams[CSITUNITPRICE]	= "1254.40";
+```
+
+	
+	
 
 
 	
