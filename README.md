@@ -51,8 +51,8 @@ Esta versión soporta únicamente pago en moneda nacional argentina (CURRENCYCOD
 	 -crear un string Athorization con el dato del http header suministrados por Todo Pago
 	 -llame al metodo 'TPConnector_Init'
 
-	##	TPCtor_Interface *pConntor = pIntf();
-	## 	if( pConntor ) {
+		TPCtor_Interface *pConntor = pIntf();
+	 	if( pConntor ) {
 			cout << "----------------Calling SendAuthorizeRequest() ........." << endl;
 			if(ret = pConntor->TPConnector_Init(Endpoint, Athorization) == 0)
 				cout << "---------------- SendAuthorizeRequest() OK\n";
@@ -62,8 +62,7 @@ Esta versión soporta únicamente pago en moneda nacional argentina (CURRENCYCOD
 	este metodo usa dos parámetros del tipo std::map, para cada uno de estos parámetros estan definidas las keys y se 		usan de la siguiente forma:
 	
 		Si "RParams" es el primer parámetro del metodo, hacemos:
-		     
-		     ```C#
+```C#
 		     <ins><strong>datos propios del comercio</strong></ins>
 		     map<std::string, std::string>RParams;
 		     RParams[SECURITY]	= "912EC803B2CE49E4A541068D495AB570";
@@ -72,7 +71,7 @@ Esta versión soporta únicamente pago en moneda nacional argentina (CURRENCYCOD
 	             RParams[URL_OK]	= "http://google.com";
 	             RParams[URL_ERROR]	= "http://www.coco.com";
 	             RParams[ENCODING_METHOD] = "XML";
-	             ```
+```
 	        
 	        Si 'RPayload' es el segundo parametro de este metodo y también del tipo std:map<string, string> hacemos:
 	             ```C#
