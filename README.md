@@ -217,15 +217,15 @@ En este caso hay que llamar a GetAuthorizeAnswer_Send(input, output), que lleva 
 	map<string, string>PayLParams;
 	
 	PayLParams[CSSTCITY	]	= "Villa General Belgrano"; //MANDATORIO.
-        PayLParams[CSSTCOUNTRY]		= "AR";//MANDATORIO. Código ISO.
-        PayLParams[CSSTEMAIL]		= "todopago@hotmail.com"; //MANDATORIO.
-        PayLParams[CSSTFIRSTNAME]	= "Juan";//MANDATORIO.      
-        PayLParams[CSSTLASTNAME]	= "Perez";//MANDATORIO.
-        PayLParams[CSSTPHONENUMBER]	= "541160913988";//MANDATORIO.     
-        PayLParams[CSSTPOSTALCODE]	= " 1010";//MANDATORIO.
-        PayLParams[CSSTSTATE]		= "B";//MANDATORIO
-        PayLParams[CSSTSTREET1]		= "Cerrito 740";//MANDATORIO.
-        PayLParams[CSMDD12	]	= "";//NO MADATORIO.     
+	PayLParams[CSSTCOUNTRY]		= "AR";//MANDATORIO. Código ISO.
+	PayLParams[CSSTEMAIL]		= "todopago@hotmail.com"; //MANDATORIO.
+	PayLParams[CSSTFIRSTNAME]	= "Juan";//MANDATORIO.      
+	PayLParams[CSSTLASTNAME]	= "Perez";//MANDATORIO.
+	PayLParams[CSSTPHONENUMBER]	= "541160913988";//MANDATORIO.     
+	PayLParams[CSSTPOSTALCODE]	= " 1010";//MANDATORIO.
+	PayLParams[CSSTSTATE]		= "B";//MANDATORIO
+	PayLParams[CSSTSTREET1]		= "Cerrito 740";//MANDATORIO.
+	PayLParams[CSMDD12	]	= "";//NO MADATORIO.     
 	PayLParams[CSMDD13	]	= "";//NO MANDATORIO.     
 	PayLParams[CSMDD14	]	= "";//NO MANDATORIO.      
 	PayLParams[CSMDD15	]	= "";//NO MANDATORIO.        
