@@ -22,7 +22,9 @@ Modulo de conexión con el gateway de pago 'Todo Pago'
 <li>a. Se debe descargar la última versión del SDK desde el botón Download ZIP, branch master.		
    Una vez descargado y descomprimido, debe incluir el archivo TPConnectorDll.h a su proyecto.
 </li>
-<li>b. Deberá definir la macro "DLL_EXPLICIT_LINK" para todas las configuraciones de su proyecto. Si usa Visual C++ 2012            deberá     ir a: Property Pages -> C/C++ -> Preprocessor y seleccionar "All Configurations" para luego en          "Preprocessor Definitios"     crear la macro.
+<li>b. Deberá definir la macro "DLL_EXPLICIT_LINK" para todas las configuraciones de su proyecto.
+Si usa Visual C++ 2012  deberá ir a: Property Pages -> C/C++ -> Preprocessor y seleccionar "All Configurations" 
+para luego en "Preprocessor Definitios" crear la macro.
 </li>
 <li>c. Archivo 'cacerts.pem' Contiene los certificados públicos otorgados por una autoridad de certificación de confianza,         puede descargarlo desde
 [aqui](http://curl.haxx.se/docs/caextract.html/).
@@ -45,9 +47,9 @@ Esta versión soporta únicamente pago en moneda nacional argentina (CURRENCYCOD
 		if (hDll)
 			PF_GetDLLInterface pIntf = (PF_GetDLLInterface) GetProcAddress(hDll, "GetDLLInterface");
 ####2.Inicializar el conector (TodoPago).
-	Al puntero a funcion obtenido, asignelo a uno del tipo de la clase "TPCtor_Interface" con el cual accederá a todas
-	las operaciones de la interfaz pero primero deberá inicializar el conector con el metodo 'TPConnector_Init' de la
-	siguiente forma:
+	Al puntero a funcion obtenido, asignelo a uno del tipo de la clase "TPCtor_Interface" con el cual
+	accederá a todas las operaciones de la interfaz pero primero deberá inicializar el conector con 
+	el metodo 'TPConnector_Init' de la siguiente forma:
 	 -crear un string con el Endpoint suministrados por Todo Pago
 	 -crear un string Athorization con el dato del http header suministrados por Todo Pago
 	 -llame al metodo 'TPConnector_Init'
@@ -60,7 +62,8 @@ Esta versión soporta únicamente pago en moneda nacional argentina (CURRENCYCOD
 ####3.Servicio Web 'Authorize Request' (TodoPago).
 	Antes de consumir el servicio web "AuthorizeRequest" debemos invocar al método
 	"SendAuthorizeRequest_SetParams(request, payload)"
-	este metodo usa dos parámetros del tipo std::map, para cada uno de estos parámetros estan definidas las keys y se 		usan de la siguiente forma:
+	este metodo usa dos parámetros del tipo std::map, para cada uno de estos parámetros estan definidas
+	las keys y se usan de la siguiente forma:
 	
 		Si 'RParams' es el primer parámetro del metodo, hacemos:
 ```C++
@@ -75,7 +78,8 @@ Esta versión soporta únicamente pago en moneda nacional argentina (CURRENCYCOD
 			RParams[ENCODING_METHOD] = "XML";
 ```
 	        
-	        Si 'RPayload' es el segundo parametro de este metodo y también del tipo std:map<string, string> hacemos:
+	        Si 'RPayload' es el segundo parametro de este metodo y también del tipo std:map<string, string>
+	        hacemos:
 ```C++
 			map<string, string>PayLParams;
 			
@@ -149,7 +153,10 @@ Esta versión soporta únicamente pago en moneda nacional argentina (CURRENCYCOD
 			PayLParams[CSITUNITPRICE]		= "1254.40";
 ```
 <ins><strong>Invocamos al servicio web</strong></ins>
-		En este caso hay que llamar a SendAuthorizeRequest_Send( Output ). Este metodo devolverá en su parámetro  'Output' un std::map<string, string> con las siguientes Keys, necesarias para ubicar los datos de la respuesta del servicio web.
+		En este caso hay que llamar a SendAuthorizeRequest_Send( Output ). Este metodo devolverá
+		en su parámetro  'Output' un std::map<string, string> con las siguientes Keys, necesarias
+		para ubicar los datos de la respuesta del servicio web.
+		
 		Out[STATUSCODE]
 		Out[Message]
 		Out[REQUEST_KEY]
