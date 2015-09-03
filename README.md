@@ -62,9 +62,9 @@ Esta versión soporta únicamente pago en moneda nacional argentina (CURRENCYCOD
 	este metodo usa dos parámetros del tipo std::map, para cada uno de estos parámetros estan definidas las keys y se 		usan de la siguiente forma:
 	
 		Si "RParams" es el primer parámetro del metodo, hacemos:
-```C#
-		     <ins><strong>datos propios del comercio</strong></ins>
-		     map<std::string, std::string>RParams;
+```C++
+		     std::map<std::string, std::string>RParams;
+		     //<ins><strong>datos propios del comercio</strong></ins>
 		     RParams[SECURITY]	= "912EC803B2CE49E4A541068D495AB570";
 		     RParams[SESSION]	= "ABCDEF-1234-12221-FDE1-00000200";
 	             RParams[MERCHANT]	= "2153";
