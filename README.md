@@ -162,6 +162,23 @@ Esta versión soporta únicamente pago en moneda nacional argentina (CURRENCYCOD
 		Out[REQUEST_KEY]
 		Out[URL_Request]
 		
+####4.Confirmación de transacción.		
+En este caso hay que llamar a GetAuthorizeAnswer_Send(input, output), que lleva dos parametros map<string, string>. El parámetro 'input' llevara los datos necesario para la transaccio y en 'output' se alogará la respuesta, en el siguiente ejemplose muestra su uso:
+```C++
+			Inp[SECURITY]	= string("912EC803B2CE49E4A541068D495AB570");
+			Inp[SESSION]	= "";
+			Inp[MERCHANT]	= string("2153");
+
+			Inp[REQUEST_KEY]= string("dee4d38b-d228-d077-5b55-2b1a12d24a16");
+			Inp[ANSWER_KEY] = string("dee4d38b-d228-d077-5b55-2b1a12d24a16");
+			
+			if( ret = pConntor->GetAuthorizeAnswer_Send(Inp, Out) == 0) {
+				cout << Out[STATUSCODE] << endl;
+				cout << Output[AUTH_KEY] << endl;
+				cout << Output[ENCOD_METH] << endl;
+				cout << Output[PAYLOAD_ANSWER] << endl;
+			}
+```
 	
 
 	
