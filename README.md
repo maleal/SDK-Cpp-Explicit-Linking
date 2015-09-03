@@ -9,8 +9,10 @@ Modulo de conexión con el gateway de pago 'Todo Pago'
 
 ######[Instalación](#instalacion)		
 ######[Generalidades](#general)	
-######[Uso](#uso)		
-######[Datos adicionales para prevencion de fraude] (#datosadicionales) 		
+######[Uso](#uso)
+######[Datos adicionales para prevencion de fraude] (#datosadicionales)
+
+
 ######[Ejemplo](#ejemplo)		
 ######[Modo test](#test)
 ######[Status de la operación](#status)
@@ -174,12 +176,17 @@ En este caso hay que llamar a GetAuthorizeAnswer_Send(input, output), que lleva 
 			
 			if( ret = pConntor->GetAuthorizeAnswer_Send(Inp, Out) == 0) {
 				cout << Out[STATUSCODE] << endl;
-				cout << Output[AUTH_KEY] << endl;
-				cout << Output[ENCOD_METH] << endl;
-				cout << Output[PAYLOAD_ANSWER] << endl;
+				cout << Out[AUTH_KEY] 	<< endl;
+				cout << Out[ENCOD_METH] << endl;
+				cout << Out[PAYLOAD_ANSWER] << endl;
 			}
 ```
-	
+<a name="datosadicionales"></a>		
+## Datos adicionales para control de fraude		
+
+<a name="generales"></a>		
+##### Parámetros Adicionales en el post inicial comunes a todos los rubros:
+
 
 	
 	
