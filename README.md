@@ -11,11 +11,8 @@ Modulo de conexión con el gateway de pago 'Todo Pago'
 ######[Generalidades](#general)	
 ######[Uso](#uso)
 ######[Datos adicionales para prevencion de fraude] (#datosadicionales)
-
-
-######[Ejemplo](#ejemplo)		
-######[Modo test](#test)
 ######[Status de la operación](#status)
+
 ######[Tablas de referencia](#tablas)
 
 <a name="Instalación"></a>		
@@ -238,6 +235,28 @@ En este caso hay que llamar a GetAuthorizeAnswer_Send(input, output), que lleva 
 	PayLParams[CSITQUANTITY]	= "1";//CONDICIONAL.       
 	PayLParams[CSITUNITPRICE]	= "1254.40";
 ```
+<a name="status"></a>
+#### Status de la Operación
+La SDK cuenta con un m&eacute;todo para consultar el status de la transacci&oacute;n desde la misma SDK. El m&eacute;todo se utiliza de la siguiente manera:
+```C++
+map<string, string>::iterator it;
+map<string, string>Inp;
+map<string, string>Out;
+
+// MERCHANT es el id site y GOPERATION_ID es el id operación que se envio en el array a través del método //'sendAuthorizeRequest_Send()´
+
+Inp[GOPERATION_ID] 	= "01";
+Inp[MERCHANT]		= "2153";
+
+if( ret = pConntor->GetByOperationId_Send(Inp, Out) == 0 ) {
+	cout << "---------------- GetByOperationId_Send() -----	OK\n";
+	for(it=Out.begin(); it != Out.end(); it++)
+		cout << it->first << " = " << it->second << endl;
+}
+```
+El anterior m&eacute;todo retornara el status actual de la transacci&oacute;n en Todopago, y devuelve en Out un map<string, string>.
+[<sub>Volver a inicio</sub>](#inicio)		
+
 
 	
 	
