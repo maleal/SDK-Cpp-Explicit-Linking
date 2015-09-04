@@ -156,7 +156,7 @@ Esta versión soporta únicamente pago en moneda nacional argentina (CURRENCYCOD
 ```
 <ins><strong>Invocamos al servicio web</strong></ins>
 		En este caso hay que llamar a SendAuthorizeRequest_Send( Output ). Este metodo devolverá
-		en su parámetro  'Output' un std::map<string, string> con las siguientes Keys, necesarias
+		en su parámetro  'Output' un std::map<string, string> con las siguientes Keys necesarias
 		para ubicar los datos de la respuesta del servicio web.
 		
 		Out[STATUSCODE]
@@ -165,7 +165,7 @@ Esta versión soporta únicamente pago en moneda nacional argentina (CURRENCYCOD
 		Out[URL_Request]
 		
 ####4.Confirmación de transacción.		
-En este caso hay que llamar a GetAuthorizeAnswer_Send(input, output), que lleva dos parametros map<string, string>. El parámetro 'input' llevara los datos necesario para la transaccio y en 'output' se alogará la respuesta, en el siguiente ejemplose muestra su uso:
+En este caso hay que llamar a GetAuthorizeAnswer_Send(input, output), que lleva dos parámetros map<string, string>. El parámetro 'input' llevara los datos necesario para la transaccion y en 'output' se alogará la respuesta, en el siguiente ejemplose muestra su uso:
 ```C++
 			Inp[SECURITY]	= string("912EC803B2CE49E4A541068D495AB570");
 			Inp[SESSION]	= "";
