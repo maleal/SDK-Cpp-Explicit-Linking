@@ -13,7 +13,6 @@ Modulo de conexión con el gateway de pago 'Todo Pago'
 ######[Datos adicionales para prevencion de fraude] (#datosadicionales)
 ######[Status de la operación](#status)
 
-######[Tablas de referencia](#tablas)
 
 <a name="Instalación"></a>		
 ## Instalación
