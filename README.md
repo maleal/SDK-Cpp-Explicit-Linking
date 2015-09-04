@@ -254,7 +254,9 @@ if( ret = pConntor->GetByOperationId_Send(Inp, Out) == 0 ) {
 		cout << it->first << " = " << it->second << endl;
 }
 ```
-El anterior m&eacute;todo retornara el status actual de la transacci&oacute;n en Todopago, y devuelve en Out un map<string, string>.
+El anterior m&eacute;todo retornara el status actual de la transacci&oacute;n en Todopago, y devuelve en Out un
+map<string, string> con el status.
+
 [<sub>Volver a inicio</sub>](#inicio)		
 
 
